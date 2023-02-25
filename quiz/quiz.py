@@ -15,7 +15,7 @@ def learn(file_path: str):
         verbs = verbs_file.read()
 
     verbs_dict = {
-        verb.rpartition(' ')[2]: verb.rpartition(' ')[0][:-1]
+        verb.rpartition(' ')[2]: verb.rpartition(' ')[0]
         for verb in verbs.splitlines()
     }
 
