@@ -3,6 +3,7 @@ Train cards from Quizlett
 
 print with 'small' layout and save as a .txt
 """
+import random
 
 def learn(file_path: str):
     """
@@ -19,15 +20,26 @@ def learn(file_path: str):
         for verb in verbs.splitlines()
     }
 
-    for verb_first, verb_form in verbs_dict.items():
-        print(verb_first)
+    cards = list(verbs_dict.items())
+    random.shuffle(cards)
+
+    for idx, (verb_first, verb_form) in enumerate(cards):
+        first_word, _, the_rest_of_form = verb_form.partition(' ')
+
+        print(f'{idx + 1}/{len(cards)} {verb_first}\n{first_word}', end=' ')
         attempt = input()
 
-        while attempt != verb_form:
+        first_attempt = True
+        while attempt != the_rest_of_form:
+            if first_attempt:
+                cards.append((verb_first, verb_form))
+                first_attempt = False
+
             print(verb_form)
+            print(f'{idx + 1}/{len(cards)} {first_word}', end=' ')
             attempt = input()
 
-        print('rightig')
+        print('rightig', end='\n'*2)
 
 if __name__ == '__main__':
     import sys
