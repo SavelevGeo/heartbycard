@@ -14,6 +14,7 @@ def get_input(*print_args, **print_kwargs):
 
 def learn(
         file_path: str,
+        cards_num: int = None
     ):
     """
     iterate over a file
@@ -31,6 +32,7 @@ def learn(
 
     cards = list(verbs_dict.items())
     random.shuffle(cards)
+    cards = cards[:int(cards_num)]
 
     for idx, (verb_first, verb_form) in enumerate(cards):
         first_word, _, the_rest_of_form = verb_form.partition(' ')
@@ -52,4 +54,9 @@ def learn(
 if __name__ == '__main__':
     import sys
     path_to_file = sys.argv[1]
-    learn(path_to_file)
+    max_cards = None
+
+    if len(sys.argv) > 2:
+        max_cards = sys.argv[2]
+
+    learn(path_to_file, max_cards)
