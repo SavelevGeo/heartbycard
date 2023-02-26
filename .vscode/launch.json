@@ -11,7 +11,10 @@
             "program": "quiz/quiz.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["quiz/trennbare Verben 2.txt"]
+            "args": [
+                "quiz/Beispiele.txt",
+                "3"
+            ]
         }
     ]
 }
