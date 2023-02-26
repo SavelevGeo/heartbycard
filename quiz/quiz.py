@@ -5,7 +5,16 @@ print with 'small' layout and save as a .txt
 """
 import random
 
-def learn(file_path: str):
+def get_input(*print_args, **print_kwargs):
+    try:
+        print(*print_args, **print_kwargs)
+        return input()
+    except UnicodeDecodeError:
+        return get_input(*print_args, **print_kwargs)
+
+def learn(
+        file_path: str,
+    ):
     """
     iterate over a file
     """
@@ -26,8 +35,8 @@ def learn(file_path: str):
     for idx, (verb_first, verb_form) in enumerate(cards):
         first_word, _, the_rest_of_form = verb_form.partition(' ')
 
-        print(f'{idx + 1}/{len(cards)} {verb_first}\n{first_word}', end=' ')
-        attempt = input()
+        print(f'{idx + 1}/{len(cards)} {verb_first}', end='\n')
+        attempt = get_input(first_word, end=' ')
 
         first_attempt = True
         while attempt != the_rest_of_form:
@@ -36,8 +45,7 @@ def learn(file_path: str):
                 first_attempt = False
 
             print(verb_form)
-            print(f'{idx + 1}/{len(cards)} {first_word}', end=' ')
-            attempt = input()
+            attempt = get_input(first_word, end=' ')
 
         print('rightig', end='\n'*2)
 
