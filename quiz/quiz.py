@@ -12,10 +12,16 @@ def get_input(*print_args, **print_kwargs):
     except UnicodeDecodeError:
         return get_input(*print_args, **print_kwargs)
 
+def chardif(s1, s2):
+     for pair in list(zip(s1,s2)):
+            if not pair[0] == pair[1]:
+                 yield pair
+
 def learn(
         file_path: str,
         cards_from: int = None,
-        cards_to: int = None
+        cards_to: int = None,
+        mode: str = 'rnd'
     ):
     """
     iterate over a file
@@ -32,7 +38,9 @@ def learn(
     }
 
     cards = list(verbs_dict.items())
-    random.shuffle(cards)
+
+    if mode == 'rnd':
+        random.shuffle(cards)
 
     cards = cards[
 
@@ -46,6 +54,9 @@ def learn(
         if cards_to is not None
         else None
     ]
+    
+    if mode == 'shuf':
+        random.shuffle(cards)
 
     for idx, (verb_first, verb_form) in enumerate(cards):
         first_word, _, the_rest_of_form = verb_form.partition(' ')
@@ -55,6 +66,7 @@ def learn(
 
         first_attempt = True
         while attempt != the_rest_of_form:
+            print(list(chardif(attempt, the_rest_of_form)))
             if first_attempt:
                 cards.append((verb_first, verb_form))
                 first_attempt = False
@@ -69,12 +81,16 @@ if __name__ == '__main__':
     path_to_file = sys.argv[1]
     cards_from = None
     cards_to = None
+    mode = 'rnd'
 
     if len(sys.argv) == 3:
         cards_to = sys.argv[2]
-    elif len(sys.argv) == 4:
+    elif len(sys.argv) >= 4:
         cards_from = sys.argv[2]
         cards_to = sys.argv[3]
 
-    learn(path_to_file, cards_from, cards_to)
+    if len(sys.argv) == 5:
+        mode = sys.argv[4]
+    
+    learn(path_to_file, cards_from, cards_to, mode)
 
