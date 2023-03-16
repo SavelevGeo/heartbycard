@@ -32,7 +32,12 @@ def learn(
 
     cards = list(verbs_dict.items())
     random.shuffle(cards)
-    cards = cards[:int(cards_num)]
+    cards = cards[
+        :
+        int(cards_num)
+        if cards_num is not None
+        else None
+    ]
 
     for idx, (verb_first, verb_form) in enumerate(cards):
         first_word, _, the_rest_of_form = verb_form.partition(' ')
