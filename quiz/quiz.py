@@ -39,7 +39,7 @@ def learn(
 
     cards = list(verbs_dict.items())
 
-    if mode == 'rnd':
+    if 'rnd' in mode:
         random.shuffle(cards)
 
     cards = cards[
@@ -55,7 +55,7 @@ def learn(
         else None
     ]
     
-    if mode == 'shuf':
+    if 'shuf' in mode:
         random.shuffle(cards)
 
     for idx, (verb_first, verb_form) in enumerate(cards):
