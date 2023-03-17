@@ -59,10 +59,16 @@ def learn(
         random.shuffle(cards)
 
     for idx, (verb_first, verb_form) in enumerate(cards):
-        first_word, _, the_rest_of_form = verb_form.partition(' ')
+        if 'no-hint' not in mode:
+            first_word, _, the_rest_of_form = verb_form.partition(' ')
+        else:
+            the_rest_of_form = verb_form
 
         print(f'{idx + 1}/{len(cards)} {verb_first}', end='\n')
-        attempt = get_input(first_word, end=' ')
+        if 'no-hint' not in mode:
+            attempt = get_input(first_word, end=' ')
+        else:
+            attempt = get_input(end='')
 
         first_attempt = True
         while attempt != the_rest_of_form:
@@ -72,7 +78,10 @@ def learn(
                 first_attempt = False
 
             print(verb_form)
-            attempt = get_input(first_word, end=' ')
+            if 'no-hint' not in mode:
+                attempt = get_input(first_word, end='')
+            else:
+                attempt = get_input(end='')
 
         print('rightig', end='\n'*2)
 
