@@ -1,0 +1,21 @@
+beer, das Bier
+egg, das Ei
+vinegar, der Essig
+fish, der Fisch
+glass, das Glas
+chicken, das Hähnchen
+coffee, der Kaffee
+pot, die Kanne
+oil, das Öl
+pepper, der Pfeffer
+salt, das Salz
+sauce, die Sauce
+spaghetti, die Spaghetti
+cup, die Tasse
+tea, der Tee
+dish, der Teller
+saucer, die Untertasse
+wine, der Wein
+little sausage, das Würstchen
+lemon, die Zitrone
+sugar, der Zucker
