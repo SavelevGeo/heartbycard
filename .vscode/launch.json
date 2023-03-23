@@ -12,8 +12,8 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
-                "quiz/Beispiele.txt",
-                "3"
+                "quiz/Vokabelheft.txt",
+                "0", "10", "no-hint", "--"
             ]
         }
     ]
