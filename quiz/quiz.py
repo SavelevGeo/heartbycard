@@ -21,7 +21,8 @@ def learn(
         file_path: str,
         cards_from: int = None,
         cards_to: int = None,
-        mode: str = 'rnd'
+        mode: str = 'rnd',
+        sep: str = ' '
     ):
     """
     iterate over a file
@@ -33,7 +34,7 @@ def learn(
         verbs = verbs_file.read()
 
     verbs_dict = {
-        verb.rpartition(' ')[2]: verb.rpartition(' ')[0]
+        verb.rpartition(sep)[2]: verb.rpartition(sep)[0]
         for verb in verbs.splitlines()
     }
 
@@ -60,7 +61,7 @@ def learn(
 
     for idx, (verb_first, verb_form) in enumerate(cards):
         if 'no-hint' not in mode:
-            first_word, _, the_rest_of_form = verb_form.partition(' ')
+            first_word, _, the_rest_of_form = verb_form.partition(sep)
         else:
             the_rest_of_form = verb_form
 
@@ -91,6 +92,7 @@ if __name__ == '__main__':
     cards_from = None
     cards_to = None
     mode = 'rnd'
+    sep = ' '
 
     if len(sys.argv) == 3:
         cards_to = sys.argv[2]
@@ -98,8 +100,11 @@ if __name__ == '__main__':
         cards_from = sys.argv[2]
         cards_to = sys.argv[3]
 
-    if len(sys.argv) == 5:
+    if len(sys.argv) >= 5:
         mode = sys.argv[4]
     
-    learn(path_to_file, cards_from, cards_to, mode)
+    if len(sys.argv) == 6:
+        sep = sys.argv[5]
+    
+    learn(path_to_file, cards_from, cards_to, mode, sep)
 
