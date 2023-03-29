@@ -1,20 +1,20 @@
-frying pan, die Bratpfanne
-slicer, die Brotmaschine
-can, die Dose
-can opener, der Dosenöffner
-preserving jar, das Einmachglas
-bottle, die Flasche
-bottle opener, der Flaschenöffner
-meat grinder, der Fleischwolf
-fork, die Gabel
-coffee machine, die Kaffeemaschine
-cooking pot, der Kochtopf
-corkscrew, der Korkenzieher
-spoon, der Löffel
-knife, das Messer
-package, die Packung
-mixer, die Rührmaschine
-scissors, die Schere
-whisk, der Schneebesen
-bowl, die Schüssel
-sieve, das Sieb
+die Bratpfanne--frying pan
+die Brotmaschine--slicer
+die Dose--can
+der Dosenöffner--can opener
+das Einmachglas--preserving jar
+die Flasche--bottle
+der Flaschenöffner--bottle opener
+der Fleischwolf--meat grinder
+die Gabel--fork
+die Kaffeemaschine--coffee machine
+der Kochtopf--cooking pot
+der Korkenzieher--corkscrew
+der Löffel--spoon
+das Messer--knife
+die Packung--package
+die Rührmaschine--mixer
+die Schere--scissors
+der Schneebesen--whisk
+die Schüssel--bowl
+das Sieb--sieve
