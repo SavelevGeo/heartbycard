@@ -1,21 +1,21 @@
-beer, das Bier
-egg, das Ei
-vinegar, der Essig
-fish, der Fisch
-glass, das Glas
-chicken, das Hähnchen
-coffee, der Kaffee
-pot, die Kanne
-oil, das Öl
-pepper, der Pfeffer
-salt, das Salz
-sauce, die Sauce
-spaghetti, die Spaghetti
-cup, die Tasse
-tea, der Tee
-dish, der Teller
-saucer, die Untertasse
-wine, der Wein
-little sausage, das Würstchen
-lemon, die Zitrone
-sugar, der Zucker
+das Bier--beer
+das Ei--egg
+der Essig--vinegar
+der Fisch--fish
+das Glas--glass
+das Hähnchen--chicken
+der Kaffee--coffee
+die Kanne--pot
+das Öl--oil
+der Pfeffer--pepper
+das Salz--salt
+die Sauce--sauce
+die Spaghetti--spaghetti
+die Tasse--cup
+der Tee--tea
+der Teller--dish
+die Untertasse--saucer
+der Wein--wine
+das Würstchen--little sausage
+die Zitrone--lemon
+der Zucker--sugar
