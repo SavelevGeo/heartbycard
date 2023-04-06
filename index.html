@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>HTML</title>
+  
+  <!-- HTML -->
+    
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="cdn_modules/bootstrap@5.2.3/css/bootstrap.css">
+  <script src="cdn_modules/bootstrap@5.2.3/js/bootstrap.min.js"></script>
+  
+  <!-- vue -->
+  <script src="cdn_modules/vue@3.2.47/vue.global.js"></script>
+  <!--script src="https://unpkg.com/vue@3.2.47"></script-->
+  <!-- gsap -->
+  <script src="cdn_modules/gsap@3.11.5/gsap.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app" class="card">
+  <form @submit.prevent="checkAttempt" class="card-body">
+    
+    <input class="current-num" v-model.lazy="currentDeck.num" type="number"><span :class="{ active: !learnMistakes }" v-show="!learnMistakes">/{{ cards.items.length }}</span>
+    
+    <label v-show="mistakes.items.length>0">
+      <input type="checkbox" v-model="learnMistakes">learn by mistakes
+      (<span :class="{ active: learnMistakes }">{{ mistakes.items.length }}</span>)
+    </label>
+    
+    
+
+    <h2 class="current-card-menu card-title"><span @click="previousCard">&lt;</span><span class="current-card">{{ currentCard.right }}</span><span @click="nextCard">&gt;</span>
+    </h2>
+    
+    <input class="attempt" v-model.trim="attempt">
+        
+    <div v-show="attemptFinal">
+      <p v-show="attemptCorrect">rigtig</p>
+      <p v-show="!attemptCorrect">{{ currentCard.left }}</p>
+      <span @click="nextCard">nächste</span>
+    </div>
+    
+    <button type="submit" hidden>submit</button>
+  </form>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>

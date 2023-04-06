@@ -1,0 +1,50 @@
+@import 'https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,600,700';
+
+body {
+  font-size: 15pt;
+  font-family: 'Work Sans';
+}
+
+#app {
+  margin: 40px;
+  
+}
+
+.active {
+  font-weight: bold;
+}
+
+.current-num {
+  display: inline;
+  width: 30px;
+  border: none;
+  text-align: right;
+  line-height: 1px;
+}
+
+.current-num:focus {
+  outline: none;
+}
+
+.current-card-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current-card-menu, 
+.current-card-menu * {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.current-card {
+  text-align: center;
+}
+
+.attempt {
+  border-radius: 5px;
+  border: 1px solid black;
+}
