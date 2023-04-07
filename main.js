@@ -49,8 +49,10 @@ const app = Vue.createApp({
       if (this.currentDeck.num < this.currentDeck.items.length){
         this.currentDeck.num++;
         
-      } else if (!this.learnMistakes && this.mistakes.items.length > 0) 
+      } else if (!this.learnMistakes && this.mistakes.items.length > 0){
         this.learnMistakes = true
+        
+      } 
       
       this.resetCard();
     },
