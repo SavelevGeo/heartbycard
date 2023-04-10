@@ -35,22 +35,24 @@
     <div class="card-num-menu">
     <input class="current-num" v-model.lazy="currentDeck.num" type="number"><span :class="{ active: !learnMistakes }" v-show="!learnMistakes">/{{ cards.items.length }}</span>
     
-    <label v-show="mistakes.items.length>0">
+    <label class="learn-by-mistakes" v-show="mistakes.items.length>0">
       <input type="checkbox" v-model="learnMistakes">learn by mistakes
       (<span :class="{ active: learnMistakes }">{{ mistakes.items.length }}</span>)
     </label>
     </div>
     
 
-    <h2 class="current-card-menu card-title"><span @click="previousCard">&lt;</span><span class="current-card">{{ currentCard.right }}</span><span @click="nextCard">&gt;</span>
-    </h2>
+    <div class="current-card-menu"><span @click="previousCard">&lt;</span><span class="current-card">{{ currentCard.right }}</span><span @click="nextCard">&gt;</span>
+    </div>
     
+    <div class="attempt-menu">
     <input class="attempt" v-model.trim="attempt">
         
-    <div v-show="attemptFinal">
+    <div class="attempt-final" v-show="attemptFinal">
       <p v-show="attemptCorrect">rigtig</p>
       <p v-show="!attemptCorrect">{{ currentCard.left }}</p>
       <span @click="nextCard">nächste</span>
+    </div>
     </div>
     
     <button type="submit" hidden>submit</button>
