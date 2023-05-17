@@ -5,13 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
+  <!-- vue -->
   <script src="https://unpkg.com/vue@3.2.47"></script>
+  
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="./style.css">
   <title></title>
 </head>
 
 <body>
   <div id="app">
-    <a v-for="fileName in fileNames" :href="link(fileName)">{{ fileName }}</a>
+    <ul class="menu">
+      <li v-for="node in nodes" class="menu__item">
+      <h2
+        class="menu__item__header"
+        @click="node.collapsed=!node.collapsed">{{ node.stem }}</h2>
+        <a v-if="!node.collapsed" :href="node.appLink">go</a>
+    </div>
+    </ul>
   </div>
   <script src="main.js"></script>
 </body>
