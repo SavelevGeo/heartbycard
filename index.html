@@ -17,13 +17,13 @@
 
 <body>
   <div id="app">
+
     <ul class="menu">
-      <li v-for="node in nodes" class="menu__item">
+      <li v-for="cardsFile in cardsFiles" class="menu__item">
       <h2
         class="menu__item__header"
-        @click="node.collapsed=!node.collapsed">{{ node.stem }}</h2>
-        <a v-if="!node.collapsed" :href="node.appLink">go</a>
-    </div>
+        @click="cardsFile.collapsed = !cardsFile.collapsed">{{ cardsFile.stem }}</h2>
+        <a v-if="!cardsFile.collapsed" :href="cardsFile.appLink">go</a>
     </ul>
   </div>
   <script src="main.js"></script>
