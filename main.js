@@ -3,10 +3,25 @@ class cardsFile {
     this.fileName = nodePath.split('/')[1]
     this.stem = this.fileName.split('.')[0];
     this.collapsed = true;
+    this.content = '';
     
     this._fileNameEncoded = encodeURI(this.fileName);
     this.appLink = `learn/?file=${this._fileNameEncoded}`
     this.rawLink = `https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this._fileNameEncoded}`
+  }
+  
+  toggleCollapsed() {
+    this.collapsed = !this.collapsed
+  }
+  
+  getContent() {
+    fetch(this.rawLink)
+      .then(resp => resp.text())
+      .then(text => this.content = text)
+  }
+  
+  get len() {
+    return this.content.split('\n').length
   }
 }
 
