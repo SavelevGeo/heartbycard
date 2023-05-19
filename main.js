@@ -3,7 +3,7 @@ class cardsFile {
     this.fileName = nodePath.split('/')[1]
     this.stem = this.fileName.split('.')[0];
     this.collapsed = true;
-    this.content = '';
+    this.content = undefined;
     
     this._fileNameEncoded = encodeURI(this.fileName);
     this.appLink = `learn/?file=${this._fileNameEncoded}`
@@ -14,13 +14,17 @@ class cardsFile {
     this.collapsed = !this.collapsed
   }
   
-  getContent() {
+  fetchContent() {
+    if (this.content === undefined)
     fetch(this.rawLink)
       .then(resp => resp.text())
       .then(text => this.content = text)
   }
   
   get len() {
+    if (this.content === undefined)
+      return undefined
+    
     return this.content.split('\n').length
   }
 }

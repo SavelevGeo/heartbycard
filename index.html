@@ -19,10 +19,10 @@
       <li v-for="cardsFile in cardsFiles" class="menu__item">
       <h2
         class="menu__item__header"
-        @click="cardsFile.toggleCollapsed(); cardsFile.getContent()">{{ cardsFile.stem }}</h2>
+        @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</h2>
         <div v-if="!cardsFile.collapsed">
+          <span>{{ cardsFile.len }}</span>
           <a :href="cardsFile.appLink">go</a>
-          <span v-if="cardsFile.content!=''">{{ cardsFile.len }}</span>
         </div>
       </li>
     </ul>
