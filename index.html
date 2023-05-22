@@ -20,8 +20,30 @@
       <h2
         class="menu__item__header"
         @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</h2>
-        <div v-if="!cardsFile.collapsed">
-          <span>{{ cardsFile.len }}</span>
+        
+        <div class="settings" v-if="!cardsFile.collapsed">
+          
+          <span class="bounds__menu">
+            
+            from
+            <span @click="cardsFile.minCardNum--">&lt;</span>
+            <span class="bound__num">{{
+              cardsFile.minCardNum
+            }}</span>
+            <span @click="cardsFile.minCardNum++">&gt;</span>
+            
+            to
+            <span @click="cardsFile.maxCardNum--">&lt;</span>
+            <span class="bound__num">{{
+              cardsFile.maxCardNum
+            }}</span>
+            <span @click="cardsFile.maxCardNum++">&gt;</span>
+            
+            out of
+            <span>{{ cardsFile.len }}</span>
+          </span>
+
+          
           <a :href="cardsFile.appLink">go</a>
         </div>
       </li>

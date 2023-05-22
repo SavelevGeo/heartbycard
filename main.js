@@ -1,13 +1,23 @@
+function clamp(num, min, max) {
+  return Math.min(
+    Math.max(num, min), max
+  );
+}
+
 class cardsFile {
   constructor(nodePath) {
     this.fileName = nodePath.split('/')[1]
     this.stem = this.fileName.split('.')[0];
-    this.collapsed = true;
     this.content = undefined;
+    this._minCardNum = 1;
+    this._maxCardNum = 1;
+
+    this.collapsed = true;
     
     this._fileNameEncoded = encodeURI(this.fileName);
-    this.appLink = `learn/?file=${this._fileNameEncoded}`
     this.rawLink = `https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this._fileNameEncoded}`
+    
+    this.appLink = `learn/?file=${this._fileNameEncoded}`
   }
   
   toggleCollapsed() {
@@ -18,7 +28,26 @@ class cardsFile {
     if (this.content === undefined)
     fetch(this.rawLink)
       .then(resp => resp.text())
-      .then(text => this.content = text)
+      .then(text => {
+        this.content = text;
+        this.maxCardNum = this.len;
+      })
+  }
+  
+  get minCardNum() {
+    return this._minCardNum
+  }
+  
+  set minCardNum(value) {
+    this._minCardNum = clamp(value, 1, this.maxCardNum)
+  }
+  
+  get maxCardNum() {
+    return this._maxCardNum
+  }
+  
+  set maxCardNum(value) {
+    this._maxCardNum = clamp(value, this.minCardNum, this.len)
   }
   
   get len() {
@@ -47,8 +76,32 @@ const app = Vue.createApp({
           .map(node => new cardsFile(node.path)
           );
       })
+  },
+  methods: {
+    clamp(num, min, max) {
+     return Math.min(
+        Math.max(num, min), max
+      );
+    }
   }
 });
 
 
 app.mount('#app');
+
+
+const x = {
+  _value: 0,
+
+  get value() {
+    return this._value
+  },
+  
+  set value(num) {
+    this._value += clamp(num, 0, 3)
+  }
+}
+
+x.value += 5
+
+console.log(x.value)
