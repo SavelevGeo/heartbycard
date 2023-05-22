@@ -21,7 +21,7 @@
           class="menu__item__header"
           @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</h2>
         
-        <form class="settings" v-if="!cardsFile.collapsed">
+        <form class="settings" v-if="!cardsFile.collapsed" :action="cardsFile.appLink">
           
           <span class="bounds__menu">
             <div class="bounds__from_to">
@@ -42,8 +42,9 @@
             </div>
           </span>
 
-          
-          <a :href="cardsFile.appLink">go</a>
+          <button type="submit">
+            go
+          </button>
         </form>
       </li>
     </ul>
