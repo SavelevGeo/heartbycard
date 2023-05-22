@@ -17,35 +17,34 @@
 
     <ul class="menu">
       <li v-for="cardsFile in cardsFiles" class="menu__item">
-      <h2
-        class="menu__item__header"
-        @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</h2>
+        <h2
+          class="menu__item__header"
+          @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</h2>
         
-        <div class="settings" v-if="!cardsFile.collapsed">
+        <form class="settings" v-if="!cardsFile.collapsed">
           
           <span class="bounds__menu">
+            <div class="bounds__from_to">
+              from
+              <span @click="cardsFile.minCardNum--">&lt;</span>
+              <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.minCardNum">
+              <span @click="cardsFile.minCardNum++">&gt;</span>
+              
+              to
+              <span @click="cardsFile.maxCardNum--">&lt;</span>
+              <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.maxCardNum">
+              <span @click="cardsFile.maxCardNum++">&gt;</span>
+            </div>
             
-            from
-            <span @click="cardsFile.minCardNum--">&lt;</span>
-            <span class="bound__num">{{
-              cardsFile.minCardNum
-            }}</span>
-            <span @click="cardsFile.minCardNum++">&gt;</span>
-            
-            to
-            <span @click="cardsFile.maxCardNum--">&lt;</span>
-            <span class="bound__num">{{
-              cardsFile.maxCardNum
-            }}</span>
-            <span @click="cardsFile.maxCardNum++">&gt;</span>
-            
-            out of
-            <span>{{ cardsFile.len }}</span>
+            <div class="bounds__out_of">
+              out of
+              <span>{{ cardsFile.len }}</span>
+            </div>
           </span>
 
           
           <a :href="cardsFile.appLink">go</a>
-        </div>
+        </form>
       </li>
     </ul>
   </div>

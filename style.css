@@ -34,3 +34,11 @@ body {
   font-size: inherit;
 }
 
+.bound__num {
+  font-family: unset;
+  font-size: unset;
+  color: unset;
+  
+  text-align: center;
+  width: 25px
+}
