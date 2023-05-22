@@ -26,14 +26,14 @@
           <span class="bounds__menu">
             <div class="bounds__from_to">
               from
-              <span @click="cardsFile.minCardNum--">&lt;</span>
+              <span class="btn" @click="cardsFile.minCardNum--">&lt;</span>
               <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.minCardNum">
-              <span @click="cardsFile.minCardNum++">&gt;</span>
+              <span class="btn" @click="cardsFile.minCardNum++">&gt;</span>
               
               to
-              <span @click="cardsFile.maxCardNum--">&lt;</span>
+              <span class="btn" @click="cardsFile.maxCardNum--">&lt;</span>
               <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.maxCardNum">
-              <span @click="cardsFile.maxCardNum++">&gt;</span>
+              <span class="btn" @click="cardsFile.maxCardNum++">&gt;</span>
             </div>
             
             <div class="bounds__out_of">

@@ -42,3 +42,10 @@ body {
   text-align: center;
   width: 25px
 }
+
+.btn {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin: 5px;
+}

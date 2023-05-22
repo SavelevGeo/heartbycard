@@ -86,22 +86,4 @@ const app = Vue.createApp({
   }
 });
 
-
 app.mount('#app');
-
-
-const x = {
-  _value: 0,
-
-  get value() {
-    return this._value
-  },
-  
-  set value(num) {
-    this._value += clamp(num, 0, 3)
-  }
-}
-
-x.value += 5
-
-console.log(x.value)
