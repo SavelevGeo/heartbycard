@@ -37,11 +37,6 @@
               <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.maxCardNum">
               <span class="btn" @click="cardsFile.maxCardNum++">&gt;</span>
             </div>
-            
-            <div class="bounds__out_of">
-              out of
-              <span>{{ cardsFile.len }}</span>
-            </div>
           </span>
           
           <input type="text" name="file" v-model="cardsFile._fileNameEncoded" hidden />

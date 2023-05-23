@@ -41,8 +41,7 @@ body {
   border-top: 5px solid #F6F1F1;
 }
 
-.bounds__from_to,
-.bounds__out_of {
+.bounds__from_to {
   text-align: right;
 }
 
