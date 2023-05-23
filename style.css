@@ -6,19 +6,20 @@ body {
   
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   
   background-color: #F6F1F1;
 }
 
 .menu {
   margin: 0; padding: 0;
+  max-width: 300px;
 }
 
 .menu__item {
   text-align: center;
   margin: 15px;
-  padding: 10px;
+  /* padding: 10px; */
   
   background-color: white;
   color: #146C94;
@@ -30,8 +31,19 @@ body {
 .menu__item__header {
   font-weight: 500;
   display: block;
-  margin: 0; padding: 0;
+  margin: 0; padding: 5px;
   font-size: inherit;
+}
+
+.settings {
+  /* margin-top: 5px; */
+  padding-top: 5px;
+  border-top: 5px solid #F6F1F1;
+}
+
+.bounds__from_to,
+.bounds__out_of {
+  text-align: right;
 }
 
 .bound__num {

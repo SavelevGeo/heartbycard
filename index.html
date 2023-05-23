@@ -29,7 +29,9 @@
               <span class="btn" @click="cardsFile.minCardNum--">&lt;</span>
               <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.minCardNum">
               <span class="btn" @click="cardsFile.minCardNum++">&gt;</span>
+            </div>
               
+            <div class="bounds__from_to">
               to
               <span class="btn" @click="cardsFile.maxCardNum--">&lt;</span>
               <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.maxCardNum">
