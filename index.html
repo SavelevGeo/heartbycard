@@ -21,7 +21,7 @@
           class="menu__item__header"
           @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</h2>
         
-        <form class="settings" v-if="!cardsFile.collapsed" :action="cardsFile.appLink">
+        <form class="settings" v-if="!cardsFile.collapsed" action="learn/">
           
           <span class="bounds__menu">
             <div class="bounds__from_to">
@@ -41,7 +41,9 @@
               <span>{{ cardsFile.len }}</span>
             </div>
           </span>
-
+          
+          <input type="text" name="file" v-model="cardsFile._fileNameEncoded" hidden />
+          
           <button type="submit">
             go
           </button>

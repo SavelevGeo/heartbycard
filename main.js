@@ -16,8 +16,6 @@ class cardsFile {
     
     this._fileNameEncoded = encodeURI(this.fileName);
     this.rawLink = `https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this._fileNameEncoded}`
-    
-    this.appLink = `learn/?file=${this._fileNameEncoded}`
   }
   
   toggleCollapsed() {
@@ -56,6 +54,12 @@ class cardsFile {
     
     return this.content.split('\n').length
   }
+  
+  /*
+  get appLink() {
+    return `learn/?file=${this._fileNameEncoded}`
+  }
+  */
 }
 
 const app = Vue.createApp({
