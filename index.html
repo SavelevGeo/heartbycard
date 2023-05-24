@@ -17,11 +17,17 @@
 
     <ul class="menu">
       <li v-for="cardsFile in cardsFiles" class="menu__item">
+        <form action="learn/">
         <h2
           class="menu__item__header"
-          @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</h2>
-        
-        <form class="settings" v-if="!cardsFile.collapsed" action="learn/">
+          @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">
+          <span class="filename">{{ cardsFile.stem }}</span>
+          <button v-if="!cardsFile.collapsed" class="go" type="submit">
+            go
+          </button>
+        </h2>
+     
+          <div v-if="!cardsFile.collapsed" class="settings">
           
           <span class="bounds__menu">
             <div class="bounds__from_to">
@@ -41,9 +47,7 @@
           
           <input type="text" name="file" v-model="cardsFile._fileNameEncoded" hidden />
           
-          <button class="go" type="submit">
-            go
-          </button>
+          </div>
         </form>
       </li>
     </ul>

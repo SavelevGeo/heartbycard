@@ -13,10 +13,11 @@ body {
 
 .menu {
   margin: 0; padding: 0;
-  max-width: 300px;
+  width: 300px;
 }
 
 .menu__item {
+  position: relative;
   text-align: center;
   margin: 15px;
   /* padding: 10px; */
@@ -30,9 +31,14 @@ body {
 
 .menu__item__header {
   font-weight: 500;
-  display: block;
+  display: grid;
+  grid-template-columns: 'auto auto';
   margin: 0; padding: 5px;
   font-size: inherit;
+}
+
+.filename {
+  grid-row: 1;
 }
 
 .settings {
@@ -41,9 +47,16 @@ body {
   border-top: 5px solid #F6F1F1;
 }
 
+.bounds__menu {
+  display: flex;
+  justify-content: space-around;
+}
+
 .bounds__from_to {
+  display: flex;
+  align-items: center;
   text-align: right;
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .bound__num {
@@ -51,7 +64,9 @@ body {
   font-size: unset;
   color: unset;
   
-  border: 1px solid;
+  background-color: #F6F1F1;
+  
+  border: 0px solid;
   border-radius: 5px;
   
   text-align: center;
@@ -62,7 +77,7 @@ body {
   /* border: 1px solid; */
   /* border-radius: 5px; */
   padding: 0 5px;
-  margin: 5px;
+  /* margin: 5px; */
   
   color: #146C94;
 }
@@ -70,13 +85,15 @@ body {
 button {
   font-family: unset;
   font-size: unset;
-  color: white;
+  color: #146C94;
   
-  background-color: #146C94;
+  background-color: #F6F1F1;
   border: 0px solid;
   border-radius: 5px;
 }
 
 .go {
   margin: 5px;
+  justify-self: end;
+  grid-row: 1
 }
