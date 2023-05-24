@@ -43,6 +43,7 @@ body {
 
 .bounds__from_to {
   text-align: right;
+  margin-top: 5px;
 }
 
 .bound__num {
@@ -50,19 +51,32 @@ body {
   font-size: unset;
   color: unset;
   
+  border: 1px solid;
+  border-radius: 5px;
+  
   text-align: center;
   width: 25px
 }
 
 .btn {
-  border: 1px solid;
-  border-radius: 5px;
+  /* border: 1px solid; */
+  /* border-radius: 5px; */
   padding: 0 5px;
   margin: 5px;
+  
+  color: #146C94;
 }
 
 button {
   font-family: unset;
   font-size: unset;
-  color: unset;
+  color: white;
+  
+  background-color: #146C94;
+  border: 0px solid;
+  border-radius: 5px;
+}
+
+.go {
+  margin: 5px;
 }
