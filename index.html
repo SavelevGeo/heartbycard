@@ -20,8 +20,8 @@
         <form action="learn/">
         <h2
           class="menu__item__header"
-          @click="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">
-          <span class="filename">{{ cardsFile.stem }}</span>
+          @click.self="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">
+          <span class="filename" @click.self="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</span>
           <button v-if="!cardsFile.collapsed" class="go" type="submit">
             go
           </button>
