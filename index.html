@@ -22,9 +22,7 @@
           class="menu__item__header"
           @click.self="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">
           <span class="filename" @click.self="cardsFile.toggleCollapsed(); cardsFile.fetchContent()">{{ cardsFile.stem }}</span>
-          <button v-if="!cardsFile.collapsed" class="go" type="submit">
-            go
-          </button>
+         
         </h2>
      
           <div v-if="!cardsFile.collapsed" class="settings">
@@ -48,6 +46,9 @@
           <input type="text" name="file" v-model="cardsFile._fileNameEncoded" hidden />
           
           </div>
+           <button v-if="!cardsFile.collapsed" class="go" type="submit">
+            >>
+          </button>
         </form>
       </li>
     </ul>

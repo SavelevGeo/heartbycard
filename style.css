@@ -30,15 +30,12 @@ body {
 }
 
 .menu__item__header {
+  display: block;
+  /* line-height: 35px; */
   font-weight: 500;
-  display: grid;
-  grid-template-columns: 'auto auto';
-  margin: 0; padding: 5px;
+  margin: 0;
+  padding: 3px;
   font-size: inherit;
-}
-
-.filename {
-  grid-row: 1;
 }
 
 .settings {
@@ -85,15 +82,16 @@ body {
 button {
   font-family: unset;
   font-size: unset;
-  color: #146C94;
-  
-  background-color: #F6F1F1;
-  border: 0px solid;
-  border-radius: 5px;
 }
 
 .go {
-  margin: 5px;
-  justify-self: end;
-  grid-row: 1
+  color: #146C94;
+  background-color: transparent;
+  border: 0px solid;
+  
+  width: 100%;
+  border-top: 5px solid #F6F1F1;
+  padding: 0; margin: 0;
+  /* padding-top: 3px; */
+  padding-bottom: 3px;
 }
