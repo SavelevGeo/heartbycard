@@ -31,14 +31,14 @@
             <div class="bounds__from_to">
               from
               <span class="btn material_symbol" @click="cardsFile.minCardNum--">remove</span>
-              <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.minCardNum">
+              <input type="number" name="from" class="bound__num" v-model.lazy.trim="cardsFile.minCardNum">
               <span class="btn material_symbol" @click="cardsFile.minCardNum++">add</span>
             </div>
               
             <div class="bounds__from_to">
               to
               <span class="btn material_symbol" @click="cardsFile.maxCardNum--">remove</span>
-              <input type="number" class="bound__num" v-model.lazy.trim="cardsFile.maxCardNum">
+              <input type="number" name="to" class="bound__num" v-model.lazy.trim="cardsFile.maxCardNum">
               <span class="btn material_symbol" @click="cardsFile.maxCardNum++">add</span>
             </div>
           </span>

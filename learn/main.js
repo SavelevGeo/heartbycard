@@ -16,6 +16,8 @@ const app = Vue.createApp({
   created() {
     let urlParams = new URLSearchParams(window.location.search);
     this.fileName = urlParams.get('file');
+    this.from = urlParams.get('from');
+    this.to = urlParams.get('to');
     
     this.getData()
   },
