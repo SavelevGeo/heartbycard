@@ -33,22 +33,42 @@
   <form @submit.prevent="checkAttempt" class="app-body card-body">
     
     <div class="card-num-menu">
-    <input class="current-num" v-model.lazy="currentDeck.num" type="number"><span :class="{ active: !learnMistakes }" v-show="!learnMistakes">/{{ cards.items.length }}</span>
+    <input class="current-num"
+      v-model.lazy="currentDeck.num"
+      type="number">
+      <span
+        :class="{ active: !learnMistakes }"
+        v-show="!learnMistakes">/{{
+        cards.items.length
+      }}</span>
     
-    <label class="learn-by-mistakes" v-show="mistakes.items.length>0">
-      <input type="checkbox" v-model="learnMistakes">learn by mistakes
-      (<span :class="{ active: learnMistakes }">{{ mistakes.items.length }}</span>)
+    <label
+      class="learn-by-mistakes"
+      v-show="mistakes.items.length>0"
+    >
+      <input type="checkbox"
+        v-model="learnMistakes"
+      >
+      learn by mistakes
+      ({{
+        mistakes.items.length
+      }})
     </label>
     </div>
     
 
-    <div class="current-card-menu"><span @click="previousCard">&lt;</span><span class="current-card">{{ currentCard.right }}</span><span @click="nextCard">&gt;</span>
+    <div class="current-card-menu">
+      <span @click="previousCard">&lt;</span>
+      <span class="current-card">{{ currentCard.right }}</span>
+      <span @click="nextCard">&gt;</span>
     </div>
     
     <div class="attempt-menu">
-    <input class="attempt" v-model.trim="attempt">
+    <input class="attempt"
+      v-model.trim="attempt">
         
-    <div class="attempt-final" v-show="attemptFinal">
+    <div class="attempt-final"
+      v-show="attemptFinal">
       <p v-show="attemptCorrect">rigtig</p>
       <p v-show="!attemptCorrect">{{ currentCard.left }}</p>
       <span @click="nextCard">nächste</span>
