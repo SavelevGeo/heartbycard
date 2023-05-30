@@ -6,9 +6,16 @@ function splitLinesToCards(text) {
 }
 
 class Deck {
-  constructor(items) {
+  constructor(items, startValue) {
     this.items = items;
-    this.num = 1;
+    this._num = startValue;
+  }
+  
+  get num() { return this._num }
+  set num(value) {
+    if (value <= this.items.length) {
+      this._num = value
+    }
   }
 }
 
@@ -25,11 +32,11 @@ const app = Vue.createApp({
     return {
       fileName: '',
       
-      cards: new Deck([{'left':'', 'right':''}]),
+      cards: new Deck([{'left':'', 'right':''}], 1),
       attempt: '',
       attemptFinal: false,
       
-      mistakes: new Deck([]),
+      mistakes: new Deck([], 1),
       learnMistakes: false,
       currentCardMistaken: false,
     }
@@ -40,7 +47,7 @@ const app = Vue.createApp({
       
       .then(resp => resp.text())
       .then(text => {
-        this.cards = new Deck(splitLinesToCards(text)) 
+        this.cards = new Deck(splitLinesToCards(text), this.from) 
       })
     },
     
@@ -56,7 +63,7 @@ const app = Vue.createApp({
     },
     
     nextCard() {
-      if (this.currentDeck.num < this.currentDeck.items.length){
+      if (this.currentDeck.num < this.to){
         this.currentDeck.num++;
         
       } else if (!this.learnMistakes && this.mistakes.items.length > 0){

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>HTML</title>
+  <title></title>
   
   <!-- HTML -->
     
@@ -18,11 +18,6 @@
   <!-- vue -->
   <!--script src="cdn_modules/vue@3.2.47/vue.global.js"></script-->
   <script src="https://unpkg.com/vue@3.2.47"></script>
-  <!-- gsap -->
-  <script src="cdn_modules/gsap@3.11.5/gsap.min.js"></script>
-  
-  <link rel="stylesheet" href="style.css">
-
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
@@ -33,22 +28,41 @@
   <form @submit.prevent="checkAttempt" class="app-body card-body">
     
     <div class="card-num-menu">
-    <input class="current-num" v-model.lazy="currentDeck.num" type="number"><span :class="{ active: !learnMistakes }" v-show="!learnMistakes">/{{ cards.items.length }}</span>
+    <input class="current-num"
+      v-model.lazy="currentDeck.num"
+      type="number"><span
+        :class="{ active: !learnMistakes }"
+        v-show="!learnMistakes">/{{
+        to
+      }}</span>
     
-    <label class="learn-by-mistakes" v-show="mistakes.items.length>0">
-      <input type="checkbox" v-model="learnMistakes">learn by mistakes
-      (<span :class="{ active: learnMistakes }">{{ mistakes.items.length }}</span>)
+    <label
+      class="learn-by-mistakes"
+      v-show="mistakes.items.length>0"
+    >
+      <input type="checkbox"
+        v-model="learnMistakes"
+      >
+      learn by mistakes
+      ({{
+        mistakes.items.length
+      }})
     </label>
     </div>
     
 
-    <div class="current-card-menu"><span @click="previousCard">&lt;</span><span class="current-card">{{ currentCard.right }}</span><span @click="nextCard">&gt;</span>
+    <div class="current-card-menu">
+      <span @click="previousCard">&lt;</span>
+      <span class="current-card">{{ currentCard.right }}</span>
+      <span @click="nextCard">&gt;</span>
     </div>
     
     <div class="attempt-menu">
-    <input class="attempt" v-model.trim="attempt">
+    <input class="attempt"
+      v-model.trim="attempt">
         
-    <div class="attempt-final" v-show="attemptFinal">
+    <div class="attempt-final"
+      v-show="attemptFinal">
       <p v-show="attemptCorrect">rigtig</p>
       <p v-show="!attemptCorrect">{{ currentCard.left }}</p>
       <span @click="nextCard">nächste</span>
