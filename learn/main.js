@@ -63,7 +63,7 @@ const app = Vue.createApp({
     },
     
     nextCard() {
-      if (this.currentDeck.num < this.currentDeck.items.length){
+      if (this.currentDeck.num < this.to){
         this.currentDeck.num++;
         
       } else if (!this.learnMistakes && this.mistakes.items.length > 0){
