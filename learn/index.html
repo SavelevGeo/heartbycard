@@ -58,8 +58,12 @@
     </div>
     
     <div class="attempt-menu">
-    <input class="attempt"
-      v-model.trim="attempt">
+      <input class="attempt"
+        v-model.trim="attempt">
+        
+      <textarea
+        @keydown.enter.exact.prevent="checkAttempt"></textarea>
+    </div>
         
     <div class="attempt-final"
       v-show="attemptFinal">
