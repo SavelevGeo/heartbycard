@@ -22,9 +22,15 @@ class Deck {
 const app = Vue.createApp({
   created() {
     let urlParams = new URLSearchParams(window.location.search);
+    
     this.fileName = urlParams.get('file');
+    if (this.fileName === null) this.fileName = 'Verben%20mit%20pr%C3%A4postitonen.txt';
+    
     this.from = urlParams.get('from');
+    if (this.from === null) this.from = 1;
+    
     this.to = urlParams.get('to');
+    if (this.to === null) this.to = 5;
     
     this.getData()
   },
@@ -47,7 +53,7 @@ const app = Vue.createApp({
       
       .then(resp => resp.text())
       .then(text => {
-        this.cards = new Deck(splitLinesToCards(text), this.from) 
+        this.cards = new Deck(splitLinesToCards(text), this.from)
       })
     },
     
