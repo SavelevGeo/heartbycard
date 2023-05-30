@@ -62,7 +62,10 @@
         v-model.trim="attempt">
         
       <textarea
-        @keydown.enter.exact.prevent="checkAttempt"></textarea>
+        @keydown.enter.exact.prevent="checkAttempt"
+        @input="resize()"
+        ref="textarea"
+        ></textarea>
     </div>
         
     <div class="attempt-final"

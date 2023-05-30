@@ -1,3 +1,5 @@
+
+
 function splitLinesToCards(text) {
   return text.split('\n').map(card => {
     const [left, right] = card.split('--');
@@ -93,6 +95,14 @@ const app = Vue.createApp({
         // on the next submit nextcard will be called
         this.attemptFinal = true;
       }
+    },
+    
+    resize() {
+      // https://codepen.io/samverdad/pen/oNWPgoB
+      let element = this.$refs["textarea"];
+
+      element.style.height = "18px";
+      element.style.height = element.scrollHeight + "px";
     }
   },
   
