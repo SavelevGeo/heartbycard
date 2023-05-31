@@ -97,9 +97,10 @@ const app = Vue.createApp({
       }
     },
     
-    resize() {
-      // https://codepen.io/samverdad/pen/oNWPgoB
-      let element = this.$refs["textarea"];
+    resize(evt) {
+      // based on https://codepen.io/samverdad/pen/oNWPgoB
+      
+      const element = evt.target;
 
       element.style.height = "18px";
       element.style.height = element.scrollHeight + "px";
