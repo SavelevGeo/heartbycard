@@ -15,7 +15,9 @@ class cardsFile {
     this.collapsed = true;
     
     this._fileNameEncoded = encodeURI(this.fileName);
-    this.rawLink = `https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this._fileNameEncoded}`
+    // this.rawLink = `https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this._fileNameEncoded}`
+    
+    this.rawLink = `./quiz/${this._fileNameEncoded}`
   }
   
   toggleCollapsed() {

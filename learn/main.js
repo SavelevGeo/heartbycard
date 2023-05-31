@@ -51,8 +51,10 @@ const app = Vue.createApp({
   },
   methods: {
     getData() {
-      fetch(`https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this.fileName}`)
+      // fetch(`https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this.fileName}`)
       
+      fetch(`../quiz/${this.fileName}`)
+
       .then(resp => resp.text())
       .then(text => {
         this.cards = new Deck(splitLinesToCards(text), this.from)
