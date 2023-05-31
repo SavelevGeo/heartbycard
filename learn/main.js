@@ -103,7 +103,7 @@ const app = Vue.createApp({
       const element = evt.target;
 
       element.style.height = "15pt";
-      element.style.height = element.scrollHeight + "px";
+      element.style.height = element.scrollHeight + 1 + "px";
     }
   },
   
