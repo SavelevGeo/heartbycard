@@ -1,3 +1,5 @@
+
+
 function splitLinesToCards(text) {
   return text.split('\n').map(card => {
     const [left, right] = card.split('--');
@@ -22,9 +24,15 @@ class Deck {
 const app = Vue.createApp({
   created() {
     let urlParams = new URLSearchParams(window.location.search);
+    
     this.fileName = urlParams.get('file');
+    if (this.fileName === null) this.fileName = 'Verben%20mit%20pr%C3%A4postitonen.txt';
+    
     this.from = urlParams.get('from');
+    if (this.from === null) this.from = 1;
+    
     this.to = urlParams.get('to');
+    if (this.to === null) this.to = 5;
     
     this.getData()
   },
@@ -43,11 +51,13 @@ const app = Vue.createApp({
   },
   methods: {
     getData() {
-      fetch(`https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this.fileName}`)
+      // fetch(`https://raw.githubusercontent.com/SavelevGeo/heartbycard/main/quiz/${this.fileName}`)
       
+      fetch(`../quiz/${this.fileName}`)
+
       .then(resp => resp.text())
       .then(text => {
-        this.cards = new Deck(splitLinesToCards(text), this.from) 
+        this.cards = new Deck(splitLinesToCards(text), this.from)
       })
     },
     
@@ -87,6 +97,15 @@ const app = Vue.createApp({
         // on the next submit nextcard will be called
         this.attemptFinal = true;
       }
+    },
+    
+    resize(evt) {
+      // based on https://codepen.io/samverdad/pen/oNWPgoB
+      
+      const element = evt.target;
+
+      element.style.height = "15pt";
+      element.style.height = element.scrollHeight + 1 + "px";
     }
   },
   
