@@ -1,23 +1,24 @@
 
-
-function splitLinesToCards(text) {
-  return text.split('\n').map(card => {
-    const [left, right] = card.split('--');
-    return { 'left': left, 'right': right }
-  });
-}
-
 class Deck {
   constructor(items, startValue) {
     this.items = items;
     this._num = startValue;
   }
   
+  static fromLines(text, startValue) {
+    const cards = text.split('\n').map(line => {
+      const [left, right] = line.split('--');
+      return { 'left': left, 'right': right }
+    })
+    
+    return new Deck(cards, startValue)
+  }
+  
   get num() { return this._num }
   set num(value) {
-    if (value <= this.items.length) {
-      this._num = value
-    }
+    if (value < 1 || value > this.items.length) return undefined
+    
+    this._num = value
   }
 }
 
@@ -57,7 +58,7 @@ const app = Vue.createApp({
 
       .then(resp => resp.text())
       .then(text => {
-        this.cards = new Deck(splitLinesToCards(text), this.from)
+        this.cards = Deck.fromLines(text, this.from)
       })
     },
     
@@ -68,7 +69,7 @@ const app = Vue.createApp({
     },
     
     previousCard() {
-      if (this.currentDeck.num > 1) this.currentDeck.num--;
+      this.currentDeck.num--;
       this.resetCard();
     },
     
