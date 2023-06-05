@@ -15,9 +15,9 @@ class Deck {
   
   get num() { return this._num }
   set num(value) {
-    if (value <= this.items.length) {
-      this._num = value
-    }
+    if (value < 1 || value > this.items.length) return undefined
+    
+    this._num = value
   }
 }
 
@@ -68,7 +68,7 @@ const app = Vue.createApp({
     },
     
     previousCard() {
-      if (this.currentDeck.num > 1) this.currentDeck.num--;
+      this.currentDeck.num--;
       this.resetCard();
     },
     
