@@ -1,5 +1,6 @@
 Anna, kommst du eigentlich aus Deutschland?--Anna, do you actually come from Germany?
-Ja, ich bin hier aufgewachsen, aber geboren bin ich in Russland. Meine Eltern sind von Sankt Petersburg nach Hamburg gezogen, als ich sehr klein war.--Yes, I grew up here, but I was born in Russia. My parents moved from Saint Petersburg to Hamburg when I was very small.
+Ja, ich bin hier aufgewachsen, aber geboren bin ich in Russland--Yes, I grew up here, but I was born in Russia
+Meine Eltern sind von Sankt Petersburg nach Hamburg gezogen, als ich sehr klein war--My parents moved from Saint Petersburg to Hamburg when I was very small.
 Interessant. Wie alt warst du damals?--Interesting. how old were you then?
 Drei Jahre und zehn Monate, also fast vier.--Three years and ten months, almost four.
 Und kannst du dich an die Zeit in Russland erinnern?--And can you remember the time in Russia?
@@ -7,7 +8,9 @@ Nicht wirklich. Ich habe fast alles vergessen.--Not really. I forget almost ever
 Das ist schade! Aber du sprichst Russisch, oder?--This is a pity! But you speak Russian, right?
 Ja, zu Hause haben meine Eltern immer Russisch gesprochen. Also habe ich das auch gelernt. Mein Deutsch ist aber viel besser.--Yes, my parents always spoke Russian at home. So I learned that too. But my German is much better.
 Wieso denn das? Russisch ist doch deine Muttersprache.--Why that? Russian is your mother tongue.
-Ja, schon, aber ich bin in Deutschland zur Schule gegangen und studiere jetzt in Leipzig an der Universität. Russisch spreche ich nur in der Freizeit mit Verwandten und Freunden. Viele Wörter kenne ich aber nur auf Deutsch. Deshalb kann ich mich über schwierige Themen in dieser Sprache besser unterhalten.--Yes, yes, but I went to school in Germany and are now studying at the university in Leipzig. I only speak Russian in my free time with relatives and friends. But I only know many words in German. Therefore, I can talk better on difficult topics in this language.
+Ja, schon, aber ich bin in Deutschland zur Schule gegangen und studiere jetzt in Leipzig an der Universität--Yes, but I went to school in Germany and now I'm studying at the university in Leipzig
+Russisch spreche ich nur in der Freizeit mit Verwandten und Freunden. Viele Wörter kenne ich aber nur auf Deutsch--I only speak Russian in my free time with relatives and friends. But I only know many words in German
+Deshalb kann ich mich über schwierige Themen in dieser Sprache besser unterhalten--Therefore, I can talk better on difficult topics in this language.
 Das kann ich verstehen. Ich bin nämlich auch zweisprachig aufgewachsen.--I can understand that. I also grew up bilingual.
 Echt?--Really?
 Ja, aber das erzähle ich dir ein anderes Mal. Jetzt muss ich los.--Yes, but I'll tell you that another time. I have to leave now.
